@@ -1,4 +1,4 @@
-package dmateos.com.mythapp.infrastructure.controller.model
+package dmateos.com.mythapp.creature.infrastructure.controller.model
 
 data class CreatureResponse (
     val id: String,

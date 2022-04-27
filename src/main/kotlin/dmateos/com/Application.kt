@@ -1,6 +1,6 @@
 package dmateos.com
 
-import dmateos.com.mythapp.infrastructure.plugins.*
+import dmateos.com.mythapp.shared.infrastructure.config.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 

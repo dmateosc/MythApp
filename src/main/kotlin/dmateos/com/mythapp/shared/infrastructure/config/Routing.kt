@@ -1,6 +1,6 @@
-package dmateos.com.mythapp.infrastructure.plugins
+package dmateos.com.mythapp.shared.infrastructure.config
 
-import dmateos.com.mythapp.infrastructure.controller.mythController
+import dmateos.com.mythapp.creature.infrastructure.controller.mythController
 import io.ktor.server.routing.*
 
 import io.ktor.server.application.*

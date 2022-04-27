@@ -1,11 +1,8 @@
-package dmateos.com.mythapp.infrastructure.plugins
+package dmateos.com.mythapp.shared.infrastructure.config
 
 import io.ktor.http.*
-import io.ktor.server.plugins.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.cors.*
-import io.ktor.server.response.*
-import io.ktor.server.request.*
 
 fun Application.configureHTTP() {
     install(CORS) {

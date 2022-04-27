@@ -1,7 +1,9 @@
 package dmateos.com.mythapp.domain.model
 
-import dmateos.com.mythapp.domain.model.enums.ReligionEnum
-import dmateos.com.mythapp.domain.model.enums.TypeEnum
+import dmateos.com.mythapp.creature.domain.model.*
+
+import dmateos.com.mythapp.creature.domain.model.enums.ReligionEnum
+import dmateos.com.mythapp.creature.domain.model.enums.TypeEnum
 import kotlin.test.Test
 
 
@@ -13,7 +15,7 @@ class CreatureTest{
 
         val creature = Creature(
             CreatureId("1"),
-            Name("name"),
+            CreatureName("name"),
             Description("desc"),
             Type(TypeEnum.GOD),
             Religion(ReligionEnum.GREEK),
