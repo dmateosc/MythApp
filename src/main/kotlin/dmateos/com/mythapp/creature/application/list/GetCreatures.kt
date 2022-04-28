@@ -9,5 +9,4 @@ class GetCreatures(private val repository: CreatureRepository) {
         return repository.getAll()
     }
 
-
 }
