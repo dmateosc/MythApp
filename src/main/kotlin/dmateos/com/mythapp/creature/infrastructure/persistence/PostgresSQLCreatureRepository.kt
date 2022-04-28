@@ -8,6 +8,7 @@ import dmateos.com.mythapp.creature.infrastructure.persistence.entity.Creatures
 import dmateos.com.mythapp.shared.infrastructure.config.create
 import dmateos.com.mythapp.shared.infrastructure.config.dbQuery
 import org.jetbrains.exposed.sql.ResultRow
+import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
 
 class PostgresSQLCreatureRepository: CreatureRepository {
@@ -28,4 +29,18 @@ class PostgresSQLCreatureRepository: CreatureRepository {
         dbQuery {
             Creatures.selectAll().map(::resultRowToCreature)
         }
+
+    override suspend fun save(creature: Creature) {
+        dbQuery {
+            Creatures.insert {
+                it[creatureId] = creature.creatureId.value
+                it[creatureName] = creature.creatureName.value
+                it[description] = creature.description.value
+                it[type] = creature.type.typeEnum.name
+                it[religion] = creature.religion.religionEnum.name
+                it[abilities] = creature.abilities.toString()
+            }
+        }
+    }
+
 }
