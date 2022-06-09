@@ -9,6 +9,4 @@ class GetCreatures(private val repository: CreatureRepository) {
     suspend fun getAll(): List<GetCreature> {
         return repository.getAll().map { GetCreature.fromDomain(it) }
     }
-
-
 }

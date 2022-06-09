@@ -1,12 +1,11 @@
 package dmateos.com.mythapp.creature.infrastructure.persistence.entity
 
-import dmateos.com.mythapp.creature.domain.model.Creature
 import org.jetbrains.exposed.sql.Table
 
 
 object Creatures: Table(){
 
-    val creatureId = varchar("creatureId", 32)
+    val creatureId = varchar("creatureId", 256)
     val creatureName = varchar("creatureName", 128)
     val description = text("description")
     val type = varchar("type", 10)
