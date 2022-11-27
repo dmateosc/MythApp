@@ -20,6 +20,6 @@ class CreatureId  (val value: String)
 data class Religion (var religionEnum: ReligionEnum)
 
 
-data class Abilities (val valueList: List<String>)
+data class Abilities (val abilities: String)
 
 

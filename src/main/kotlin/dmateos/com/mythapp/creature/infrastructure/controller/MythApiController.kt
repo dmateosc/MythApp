@@ -33,7 +33,7 @@ fun Route.mythController() {
                     request.description,
                     request.type.name,
                     request.religion.name,
-                    abilities = request.abilities.toString()
+                    abilities = request.abilities
                 )
             )
             call.respond(HttpStatusCode.Created)

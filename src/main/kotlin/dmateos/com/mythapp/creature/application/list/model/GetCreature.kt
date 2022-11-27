@@ -8,7 +8,7 @@ data class GetCreature(
     val description: String,
     val type: String,
     val religion: String,
-    val abilities: String
+    val abilities: List<String>
 ) {
     companion object {
         fun fromDomain(creature: Creature): GetCreature {
@@ -18,7 +18,7 @@ data class GetCreature(
                 description = creature.description.value,
                 religion = creature.religion.religionEnum.name,
                 type = creature.type.typeEnum.name,
-                abilities = creature.abilities.toString()
+                abilities = creature.abilities.abilities.split(",").map { it.trim() }
             )
         }
     }

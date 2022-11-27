@@ -22,7 +22,7 @@ class PostgresSQLCreatureRepository: CreatureRepository {
         description = Description(row[Creatures.description]),
         type = Type(TypeEnum.valueOf(row[Creatures.type])),
         religion = Religion(ReligionEnum.valueOf(row[Creatures.religion])),
-        abilities = Abilities(listOf(row[Creatures.abilities]))
+        abilities = Abilities(row[Creatures.abilities])
     )
 
     override suspend fun getAll(): List<Creature> =
@@ -38,7 +38,7 @@ class PostgresSQLCreatureRepository: CreatureRepository {
                 it[description] = creature.description.value
                 it[type] = creature.type.typeEnum.name
                 it[religion] = creature.religion.religionEnum.name
-                it[abilities] = creature.abilities.toString()
+                it[abilities] = creature.abilities.abilities
             }
         }
     }

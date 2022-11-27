@@ -11,7 +11,7 @@ data class CreateCreature(
     val description: String,
     val type: String,
     val religion: String,
-    val abilities: String
+    val abilities: List<String>
 
 
 ) {
@@ -23,7 +23,7 @@ data class CreateCreature(
                 description = Description(createCreature.description),
                 type = Type(TypeEnum.valueOf(createCreature.type)),
                 religion = Religion(ReligionEnum.valueOf(createCreature.religion)),
-                abilities = Abilities(listOf(createCreature.abilities))
+                abilities = Abilities(createCreature.abilities.joinToString())
 
             )
         }
