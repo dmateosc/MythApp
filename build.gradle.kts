@@ -25,7 +25,7 @@ repositories {
 val exposedVersion: String by project
 
 dependencies {
-    implementation ("io.ktor:ktor-server-core:$ktor_version") // ktor server
+    // ktor server
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-auth-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-cors-jvm:$ktor_version")
@@ -39,6 +39,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
     implementation ("com.zaxxer:HikariCP:3.4.5")
     implementation ("org.postgresql:postgresql:42.2.2")
+    implementation("io.ktor:ktor-server-core-jvm:2.1.2")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }

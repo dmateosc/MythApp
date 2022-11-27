@@ -27,13 +27,15 @@ fun Route.mythController() {
         }
         post("creature") {
             val request = call.receive<CreatureRequest>()
-            CreatureCreator(PostgresSQLCreatureRepository()).save(CreateCreature(
-                request.creatureName,
-                request.description,
-                request.type.name,
-                request.religion.name,
-                abilities = request.abilities.toString()
-            ))
+            CreatureCreator(PostgresSQLCreatureRepository()).save(
+                CreateCreature(
+                    request.creatureName,
+                    request.description,
+                    request.type.name,
+                    request.religion.name,
+                    abilities = request.abilities.toString()
+                )
+            )
             call.respond(HttpStatusCode.Created)
         }
     }

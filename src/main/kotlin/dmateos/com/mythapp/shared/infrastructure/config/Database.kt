@@ -11,7 +11,7 @@ import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
 
-private lateinit var database:Database
+private lateinit var database: Database
 fun initDB() {
 
     val config = HoconApplicationConfig(ConfigFactory.load())
@@ -25,9 +25,10 @@ fun initDB() {
     database = Database.connect(dataSource)
 }
 
-fun create(clazz: Table){
-    transaction(database){
+fun create(clazz: Table) {
+    transaction(database) {
         SchemaUtils.create(clazz)
     }
 }
-suspend fun <T> dbQuery(block: suspend () -> T): T = newSuspendedTransaction( Dispatchers.IO) { block()}
+
+suspend fun <T> dbQuery(block: suspend () -> T): T = newSuspendedTransaction(Dispatchers.IO) { block() }
